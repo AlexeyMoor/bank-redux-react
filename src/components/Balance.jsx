@@ -1,4 +1,9 @@
-const Balance = ({balance}) => {
+import {store} from "../configureStore/store.js";
+import {useSyncExternalStore} from "react";
+
+const Balance = () => {
+  const {balance} = useSyncExternalStore(store.subscribe, store.getState); // подписываемся на изменения стора и получаем актуальный стейт
+
   return (
     <div>
       <h1>Bank</h1>
