@@ -1,4 +1,4 @@
-import {createStore} from "../redux/createStore.js";
+import {createStore} from "redux";
 import {accountReducer} from "../reducer/accountReducer.js";
 
 const initialState = {
