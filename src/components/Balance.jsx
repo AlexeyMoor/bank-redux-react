@@ -1,13 +1,12 @@
-import {store} from "../configureStore/store.js";
-import {useSyncExternalStore} from "react";
+import {useSelector} from "react-redux";
 
-const Balance = () => {
-  const {balance} = useSyncExternalStore(store.subscribe, store.getState); // подписываемся на изменения стора и получаем актуальный стейт
+const Balance = () => { // КОМПОНЕНТ для отображения баланса пользователя
+  const balance = useSelector(state => state.balance); // useSelector извлекает баланс из состояния Redux
 
   return (
-    <div>
-      <h1>Bank</h1>
-      <h2>Your balance: {balance}€</h2>
+    <div className={'text-center text-uppercase'}>
+      <h1 className={'font-bold text-8xl text-[gold]'}>Iron Bank of Braavos</h1>
+      <h2 className={'text-6xl text-[firebrick]'}>Your balance: {balance}€</h2>
     </div>
   );
 };
