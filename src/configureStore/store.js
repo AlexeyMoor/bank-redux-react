@@ -1,7 +1,7 @@
 import {applyMiddleware, createStore} from "redux";
 import {accountReducer} from "../reducer/accountReducer.js";
-import {loggerEnhancer} from "../enhancers/loggerEnhancer.js";
-import {thunkEnhancer} from "../enhancers/thunkEnhancer.js";
+import {thunk} from "redux-thunk";
+import {logger} from "redux-logger";
 
 const initialState = {
   balance: 0,
@@ -9,4 +9,4 @@ const initialState = {
 };
 
 export const store = createStore(accountReducer, initialState,
-  applyMiddleware(thunkEnhancer, loggerEnhancer));
+  applyMiddleware(thunk, logger));
