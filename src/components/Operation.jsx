@@ -1,7 +1,7 @@
 import {useState} from "react";
-import {deposit, withdraw} from "../actions/accountActions.js";
 import {useDispatch} from "react-redux";
-import {fetchQuote} from "../actions/quoteAction.js";
+import {fetchQuote} from "../features/api/quoteAction.js";
+import {deposit, withdraw} from "../features/account/balanceSlice.js";
 
 const Operation = () => { // КОМПОНЕНТ для выполнения операций пополнения и снятия средств
   const [sum, setSum] = useState(0);
