@@ -1,12 +1,12 @@
 import {useSelector} from "react-redux";
 import Bank from "./Bank.jsx";
-import {useState} from "react";
+import {useRef} from "react";
 
 const Balance = () => { // КОМПОНЕНТ для отображения баланса пользователя
   const balance = useSelector(state => state.balance); // useSelector извлекает баланс из состояния Redux
   const quote = useSelector(state => state.quote); // useSelector извлекает цитату из состояния Redux
   // const info = {name: 'Braavos'}
-  const [info] = useState({name: 'Braavos'});
+  const info = useRef({name: 'Braavos'});
 
   console.log('Render Balance');
 
