@@ -7,7 +7,7 @@ const Balance = () => { // КОМПОНЕНТ для отображения ба
   const balance = useSelector(state => state.balance); // useSelector извлекает баланс из состояния Redux
   const quote = useSelector(state => state.quote); // useSelector извлекает цитату из состояния Redux
   const index = getRandomIndex(names.length)
-  const info = useCallback(index => getBank(index), [])
+  const info = useCallback(index => getBank(index), []); // useCallback мемоизирует функцию получения информации о банке
 
 
   console.log(`Render Balance index: ${index}`);
